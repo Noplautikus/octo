@@ -3,13 +3,18 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "lint": "vue-cli-service lint",
+    "deploy": "npm run build_prod && gh-pages -d ./dist",
     "build_assets": "node ./build_assets.js",
     "build_prod": "vue-cli-service build --dest ./dist",
-    "deploy": "npm run build_prod && gh-pages -d ./dist",
-    "lint": "vue-cli-service lint",
+    "electron:build": "vue-cli-service electron:build",
+    "electron:serve": "vue-cli-service electron:serve",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps",
     "serve_dev": "vue-cli-service serve --port 8888",
     "serve_prod": "npm run build_prod && serve -l 8889 -s ./dist"
   },
+  "main": "background.js",
   "dependencies": {
     "core-js": "^2.6.11",
     "deepmerge": "^4.2.2",
@@ -30,12 +35,15 @@
     "@vue/cli-service": "^4.4.1",
     "@vue/eslint-config-airbnb": "^4.0.1",
     "babel-eslint": "^10.1.0",
+    "electron": "^9.0.0",
+    "electron-devtools-installer": "^3.1.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.3",
     "gh-pages": "^3.1.0",
     "serve": "^11.3.2",
     "sharp": "^0.25.4",
     "to-ico": "^1.1.5",
+    "vue-cli-plugin-electron-builder": "~2.0.0-rc.4",
     "vue-template-compiler": "^2.6.11"
   }
 }
