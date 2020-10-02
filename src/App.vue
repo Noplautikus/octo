@@ -79,6 +79,24 @@ export default {
   letter-spacing: 0.05em;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #444; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: lightgray; 
+}
+
 body {
   background-color: #111;
   font-family: 'Fira Sans', arial !important;
