@@ -57,6 +57,11 @@ export default {
 
   .document pre {
     overflow: hidden;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
   }
 
   .document .destroy {
